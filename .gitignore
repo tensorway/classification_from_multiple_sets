@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+tensorboard/*
+data/*
+!tensorboard
+!data
+.vscode
