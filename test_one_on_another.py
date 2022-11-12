@@ -20,7 +20,7 @@ def add_standard_arguments(parser):
     parser.add_argument('-p','--projector_shape', type=int, nargs='+', help='projector shape', default=[512, 512, 512])
     parser.add_argument("-ptr", "--pretrained_model_path", type=str, help="pretrained model path which to evaluate")
     parser.add_argument("-img", "--img_path", type=str, help="where to save confusion matrix")
-
+    parser.add_argument("-b", "--batch_size", type=int, default=512, help="train and valid batch size")
 
 
 
@@ -36,14 +36,11 @@ if __name__ == '__main__':
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     logging.info("using", device)
 
-    seed_everything(args.seed)
 
-    trainset, valset, n_classes = get_datasets(args.datasets, use_hard_transform=False)
+    trainset, valset, n_classes = get_datasets([args.dataset], use_hard_transform=False)
     train_dataloader = torch.utils.data.DataLoader(trainset, batch_size=args.batch_size, shuffle=True, num_workers=2)
     valid_dataloader = torch.utils.data.DataLoader(valset,   batch_size=args.batch_size, shuffle=False, num_workers=2)
 
-    model_str = str(args.datasets) # args.__str__()
-    model_path = Path(args.checkpoints_path)/('model_'+model_str+'.pt')
     model = CNN(args.projector_shape, n_classes=n_classes)
     model.to(device)
     

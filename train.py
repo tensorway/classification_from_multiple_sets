@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     opt = th.optim.Adam(model.parameters(), args.lr)
     criterion = nn.CrossEntropyLoss()
-    writer = SummaryWriter('tensorboard/finetune_'+model_str.split('/')[-1])
+    writer = SummaryWriter('tensorboard/'+model_str.split('/')[-1])
 
     def whole_dataset_eval():
         model.eval()
@@ -83,7 +83,7 @@ if __name__ == '__main__':
         confusion_mat = torch.bincount(guesses, minlength=n_classes**2).view(n_classes, n_classes).float()
         confusion_mat = confusion_mat / confusion_mat.sum(dim=0, keepdim=True)
         confusion_mat = torch.nan_to_num(confusion_mat, 0)
-        writer.add_scalar("Loss_finetune/valid", loss, step)
+        writer.add_scalar("Loss/valid", loss, step)
         writer.add_scalar("acc/valid", acc, step)
         writer.add_image("confusion", get_confusion_matrix_img(confusion_mat.cpu().numpy(), valset.get_classes()), step, dataformats='HWC')
         model.train()
