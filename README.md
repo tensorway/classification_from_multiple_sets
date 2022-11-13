@@ -32,3 +32,6 @@ After training the model on SVNH data it is evaluated on MNIST. As we can see th
 After training the model on MNIST data it is evaluated on SVNG. As we can see the model does not handle the domain shift well with 0.073983 accuracy and 2.3690145 loss. This is probably due to the fact that there is no color in MNIST dataset. Everything is predicted as 0.
 ![SVNG model on MNIST](imgs/mnist_model_on_svhn.png)
 
+# Joint training
+The repository enables joint training on all combinations of the above 3 datasets (MNIST, SVHN, CIFAR10). Here is the confusion matrix for MNIST and SVHN:
+![img](imgs/mnist_and_svhn.png)
