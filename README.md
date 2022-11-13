@@ -35,3 +35,4 @@ After training the model on MNIST data it is evaluated on SVNG. As we can see th
 # Joint training
 The repository enables joint training on all combinations of the above 3 datasets (MNIST, SVHN, CIFAR10). Here is the confusion matrix for MNIST and SVHN:
 ![img](imgs/mnist_and_svhn.png)
+The model seems to behave like a classifier which forwards the image to one of the two submodels (one for MNIST one for SVHN). This is probably due to the fact that it is easy to distinguish MNIST digit from SVHN digit (based on color).
