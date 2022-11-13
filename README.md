@@ -1,4 +1,4 @@
-# classification_from_multiple_sets
+# Classification from multiple sets
 This repository contains code to do 3 things:
 - train separate:
   - MNIST model
