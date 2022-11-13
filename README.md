@@ -7,6 +7,10 @@ This repository contains code to do 3 things:
 - evaluate on type of a model on other dataset
 - train jointly on several datasets
 
+To reproduce all experiments run: `reproduce.sh`. \
+Custom training on `train.py`. \
+Evaluate on model on another: `test_one_on_another.py`.
+
 # Training curves
 The results are the following:
 - MNIST model gets 99+% accuracy on validation set
