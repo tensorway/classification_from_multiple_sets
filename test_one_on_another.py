@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     acc, loss, confusion_img = whole_dataset_eval()
     print('Accuracy:', acc)
-    print('Loss:', acc)
+    print('Loss:', loss.item())
     plt.imsave(args.img_path, confusion_img)
 
 
