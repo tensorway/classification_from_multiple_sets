@@ -1,7 +1,23 @@
 # classification_from_multiple_sets
+This repository contains code to do 3 things:
+- train separate:
+  - MNIST model
+  - SVHN model
+  - CIFAR10 model
+- evaluate on type of a model on other dataset
+- train jointly on several datasets
 
+# Training curves
+The results are the following:
+- MNIST model gets 99+% accuracy on validation set
+- CIFAR model gets 70+% accuracy on validation set
+- SVHN model gets 87.5% accuracy on validation set
+
+## Legend 
+![img](imgs/legend.png)
+## Train set
 ![img](imgs/acc_train.svg)
-
+## Validation set
 ![img](imgs/acc_valid.svg)
 
 
@@ -9,6 +25,6 @@
 After training the model on SVNH data it is evaluated on MNIST. As we can see the model is fairly robust and can classify the images fairy well with () accuracy and () loss. This is probably due to the fact that something like an MNIST digit can be found in street numbers. Some digits work best such as 1, but others such as 6 are not that good.
 ![SVNG model on MNIST](imgs/svhn_model_on_mnist.png)
 
-After training the model on MNIST data it is evaluated on SVNG. As we can see the model does not handle the domain shift well with () accuracy and () loss. This is probably due to the fact that there is no color in MNIST dataset. Some digits work best such as 1, but others such as 6 are not that good.
-![SVNG model on MNIST](imgs/mnist_model_on_svnh.png)
+After training the model on MNIST data it is evaluated on SVNG. As we can see the model does not handle the domain shift well with () accuracy and () loss. This is probably due to the fact that there is no color in MNIST dataset. Everything is predicted as 0.
+![SVNG model on MNIST](imgs/mnist_model_on_svhn.png)
 
