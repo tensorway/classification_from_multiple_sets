@@ -35,4 +35,4 @@ After training the model on MNIST data it is evaluated on SVNG. As we can see th
 # Joint training
 The repository enables joint training on all combinations of the above 3 datasets (MNIST, SVHN, CIFAR10). Here is the confusion matrix for MNIST and SVHN:
 ![img](imgs/mnist_and_svhn.png)
-The model seems to behave like a classifier which forwards the image to one of the two submodels (one for MNIST one for SVHN). This is probably due to the fact that it is easy to distinguish MNIST digit from SVHN digit (based on color).
+The model seems to behave like a classifier which forwards the image to one of the two submodels (one for MNIST one for SVHN). This is probably due to the fact that it is easy to distinguish MNIST digit from SVHN digit (based on color). If we only look at the MNIST digits in the above matrix the model has the accuracy of 0.985 and if we look at SVHN it has accuracy of 0.881, this all means that the accuracy on MNIST is slightly down, but accuracy on SVHN is slightly increased. The model has enough capacity to absorb multiple data distributions without much performance difference.
